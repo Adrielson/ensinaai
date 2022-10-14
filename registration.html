@@ -12,6 +12,7 @@
     crossorigin="anonymous"
     />
 
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,9 +21,9 @@
     />
 
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="imagens/icon.png" />
+    <link rel="icon" href="images/icon.png" />
 
-
+    <script src="js/validate.js"></script>
 
     <title>Ensinaai</title>
   </head>
@@ -65,11 +66,30 @@
             <li class="nav-item">
               <a class="nav-link active" href="#contato">Contato</a>
             </li>
+            <!--<li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled">Disabled</a>
+                </li> -->
+          </ul>
+          <!--<form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form> -->
         </div>
       </div>
     </nav>
     </header>
-
+    
     <!-- Banner -->
     <div class="banner">
       <div class="title">
@@ -80,67 +100,56 @@
       </div>
 
       <div class="buttons">
-        <button class="btn-cadastrar">
-          Cadastre-se <i class="fas fa-plus"></i>
-        </button>
         <button class="btn-entrar">
           entrar <i class="fas fa-arrow-circle-right"></i>
         </button>
       </div>
     </div>
-    
 
-
-    <!-- servicos -->
+    <!-- conteudo -->
     <main class="servicos">
-            <!-- buscar professor -->
-            <section id="servicos-prestados">
-              <article class="artigo-servicos">
-                <div class="inner">
-                  <h2>Está precisando de aulas?</h2>
-                  <h4>
-                    Professores certificados e recomendados. Consulte livremente os perfis e entre em contato com o professor ideal de acordo com os seus critérios (tarifa, diplomas, avaliações, aulas online ou presenciais)
-                  </h4>
-                  <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="O que deseja aprender?" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar Professores</button>
-                  </form>
-                </div>
-              </article>
-      
-              <article class="artigo-servicos">
-                <!--<a href="#"><img src="imagens/md.jpg" alt="Marketing Digital" /></a>-->
-                <div class="inner">
-                  <h2>Desejo dar aulas</h2>
-                  <!--<a href="#">Marketing Digital</a>
-                  <h4>Administração de redes sociais</h4>-->
-                  <h4>
-                    Dê aulas perto de sua casa ou local de trabalho e encontre alunos geniais nas redondezas.
-                    Línguas, Reforço Escolar, Esportes, Música, Artes e Lazer... Mais de 1000 matérias a compartilhar.
-                  </h4>
+      <!-- seção clientes -->
+      <section class="section-cadastro">
+        <h2>Cadastre-se</h2>
 
-                  <button class="btn-criar-anuncio">
-                    Criar um anúncio <i class="fas fa-plus"></i>
-                  </button>
+        <div class="form-cadastro">
+          <form onsubmit="return validateForm()">
+            <div class="input-group">
+              <fieldset>
+                <label for="nome">Nome completo:</label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Digite seu nome..."
+                  size="40"
+                />
+              </fieldset>
 
-                  
-                </div>
-              </article>
-            </section>
+              <fieldset>
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Digite seu e-mail..."
+                  size="40"
+                />
+              </fieldset>
 
-      <!-- seção quem somos -->
-      <section id="quem-somos">
-        <h2>Quem somos</h2>
-        <article class="artigo-quem-somos">
-          <a href="#"><img src="imagens/eduicon.png" alt="Marketing Digital" /></a>
-          <div class="inner">
-            <a href="#">Ensina Aí!</a>
-            
-            <h4>
-              Plataforma ideal para você educador que precisa de uma renda extra. E você estudante que precisa dar um impulso em determinada matéria.
-            </h4>
-          </div>
-        </article>
+              <fieldset>
+                <label for="data_nascimento">Data de nascimento:</label>
+                <input
+                  type="date"
+                  id="data_nascimento"
+                  name="data_nascimento"
+                />
+              </fieldset>
+
+              <input type="submit" value="Cadastrar" class="btn-submit" />
+            </div>
+          </form>
+        </div>
       </section>
     </main>
 
@@ -163,15 +172,36 @@
     <script src="js/jquery.js"></script>
 
     <script>
-      $('.btn-cadastrar').click(function () {
-        window.location = 'registration.html'
+      $('.btn-menu').click(function () {
+        $('.menu').show()
+      })
+
+      $('.btn-close').click(function () {
+        $('.menu').hide()
+        return false
+      })
+
+      // $('.btn-menu-item').click(function () {
+      //   $('.menu').hide()
+      //   return false
+      // })
+      $('.menu').click(function () {
+        $('.menu').hide()
+      })
+
+      $('.btn-sobre').click(function () {
+        window.location = 'index.html#quem-somos'
+      })
+
+      $('.btn-header').click(function () {
+        window.location = '#header'
       })
     </script>
 
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-      crossorigin="anonymous"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"
     ></script>
   </body>
 </html>
